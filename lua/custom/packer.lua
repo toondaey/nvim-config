@@ -74,7 +74,11 @@ return require('packer').startup(function(use)
     use 'editorconfig/editorconfig-vim'
     --use { 'tamton-aquib/flirt.nvim' }
     use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
-    use { "nvim-telescope/telescope-file-browser.nvim" }
+    -- packer
+    use {
+        "nvim-telescope/telescope-file-browser.nvim",
+        requires = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" }
+    }
     use 'nvim-telescope/telescope-project.nvim'
     use {
         "rest-nvim/rest.nvim",
@@ -124,5 +128,7 @@ return require('packer').startup(function(use)
         end,
         requires = { "kkharji/sqlite.lua" }
     }
+    use 'vim-test/vim-test'
     use({ 'toppair/peek.nvim', run = 'deno task --quiet build:fast' })
+    use('simrat39/inlay-hints.nvim')
 end)

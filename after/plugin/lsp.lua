@@ -1,7 +1,10 @@
 -- Learn the keybindings, see :help lsp-zero-keybindings
 -- Learn to configure LSP servers, see :help lsp-zero-api-showcase
 local lsp = require('lsp-zero')
+local ih = require("inlay-hints")
 lsp.preset('recommended')
+
+ih.setup()
 
 lsp.ensure_installed({
     'tsserver',
@@ -54,7 +57,28 @@ lsp.on_attach(function(client, bufnr)
     vim.keymap.set("n", "<leader>vrr", function() vim.lsp.buf.references() end, opts)
     vim.keymap.set("n", "<leader>vrn", function() vim.lsp.buf.rename() end, opts)
     vim.keymap.set("i", "<C-h>", function() vim.lsp.buf.signature_help() end, opts)
+
+    ih.on_attach(client, bufnr)
 end)
+
+lsp.configure('lua_lsp', {
+    on_attach = function(c, b)
+        ih.on_attach(c, b)
+    end,
+    settings = {
+        Lua = {
+            hint = {
+                enable = true,
+            },
+        },
+    },
+})
+
+lsp.configure('rust_analyzer', {
+    on_attach = function(c, b)
+        ih.on_attach(c, b)
+    end
+})
 
 lsp.setup()
 
@@ -63,4 +87,4 @@ vim.diagnostic.config({
 })
 
 -- Restart LSP server
-vim.keymap.set("n", "<leader>lrs", ":LspStop<CR> <BAR> :LspStart<CR>", {silent = true})
+vim.keymap.set("n", "<leader>lrs", ":LspStop<CR> <BAR> :LspStart<CR>", { silent = true })

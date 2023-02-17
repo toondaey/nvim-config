@@ -131,4 +131,6 @@ return require('packer').startup(function(use)
     use 'vim-test/vim-test'
     use({ 'toppair/peek.nvim', run = 'deno task --quiet build:fast' })
     use('simrat39/inlay-hints.nvim')
+    use("folke/zen-mode.nvim")
+    use("airblade/vim-gitgutter")
 end)

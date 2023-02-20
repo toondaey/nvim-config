@@ -122,6 +122,12 @@ _G.packer_plugins = {
     path = "/Users/babatunde.aromire@cognitedata.com/.local/share/nvim/site/pack/packer/start/cmp_luasnip",
     url = "https://github.com/saadparwaiz1/cmp_luasnip"
   },
+  ["competitest.nvim"] = {
+    config = { "\27LJ\2\n9\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\16competitest\frequire\0" },
+    loaded = true,
+    path = "/Users/babatunde.aromire@cognitedata.com/.local/share/nvim/site/pack/packer/start/competitest.nvim",
+    url = "https://github.com/xeluxee/competitest.nvim"
+  },
   ["dashboard-nvim"] = {
     config = { "\27LJ\2\n;\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\14dashboard\frequire\0" },
     loaded = false,
@@ -129,6 +135,16 @@ _G.packer_plugins = {
     only_cond = false,
     path = "/Users/babatunde.aromire@cognitedata.com/.local/share/nvim/site/pack/packer/opt/dashboard-nvim",
     url = "https://github.com/glepnir/dashboard-nvim"
+  },
+  ["denops-docker.vim"] = {
+    loaded = true,
+    path = "/Users/babatunde.aromire@cognitedata.com/.local/share/nvim/site/pack/packer/start/denops-docker.vim",
+    url = "https://github.com/skanehira/denops-docker.vim"
+  },
+  ["dressing.nvim"] = {
+    loaded = true,
+    path = "/Users/babatunde.aromire@cognitedata.com/.local/share/nvim/site/pack/packer/start/dressing.nvim",
+    url = "https://github.com/stevearc/dressing.nvim"
   },
   ["editorconfig-vim"] = {
     loaded = true,
@@ -170,6 +186,11 @@ _G.packer_plugins = {
     path = "/Users/babatunde.aromire@cognitedata.com/.local/share/nvim/site/pack/packer/start/nerdcommenter",
     url = "https://github.com/preservim/nerdcommenter"
   },
+  ["nui.nvim"] = {
+    loaded = true,
+    path = "/Users/babatunde.aromire@cognitedata.com/.local/share/nvim/site/pack/packer/start/nui.nvim",
+    url = "https://github.com/MunifTanjim/nui.nvim"
+  },
   ["nvim-cmp"] = {
     loaded = true,
     path = "/Users/babatunde.aromire@cognitedata.com/.local/share/nvim/site/pack/packer/start/nvim-cmp",
@@ -189,6 +210,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/babatunde.aromire@cognitedata.com/.local/share/nvim/site/pack/packer/start/nvim-treesitter",
     url = "https://github.com/nvim-treesitter/nvim-treesitter"
+  },
+  ["nvim-ufo"] = {
+    loaded = true,
+    path = "/Users/babatunde.aromire@cognitedata.com/.local/share/nvim/site/pack/packer/start/nvim-ufo",
+    url = "https://github.com/kevinhwang91/nvim-ufo"
   },
   ["nvim-web-devicons"] = {
     loaded = true,
@@ -215,8 +241,13 @@ _G.packer_plugins = {
     path = "/Users/babatunde.aromire@cognitedata.com/.local/share/nvim/site/pack/packer/start/plenary.nvim",
     url = "https://github.com/nvim-lua/plenary.nvim"
   },
+  ["promise-async"] = {
+    loaded = true,
+    path = "/Users/babatunde.aromire@cognitedata.com/.local/share/nvim/site/pack/packer/start/promise-async",
+    url = "https://github.com/kevinhwang91/promise-async"
+  },
   ["rest.nvim"] = {
-    config = { "\27LJ\2\n>\0\1\5\0\4\0\0066\1\0\0009\1\1\0019\1\2\0015\3\3\0\18\4\0\0D\1\3\0\1\5\0\0\ttidy\a-i\a-q\6-\vsystem\afn\bvimî\2\1\0\6\0\r\0\0176\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0005\3\4\0=\3\5\0025\3\6\0005\4\a\0003\5\b\0=\5\t\4=\4\n\3=\3\v\0024\3\0\0=\3\f\2B\0\2\1K\0\1\0\29custom_dynamic_variables\vresult\15formatters\thtml\0\1\0\1\tjson\ajq\1\0\3\17show_headers\2\rshow_url\2\19show_http_info\2\14highlight\1\0\2\ftimeout\3–\1\fenabled\2\1\0\a\renv_file\t.env\26skip_ssl_verification\1\17yank_dry_run\2\28result_split_horizontal\1\26result_split_in_place\1\15encode_url\2\20jump_to_request\1\nsetup\14rest-nvim\frequire\0" },
+    config = { "\27LJ\2\n>\0\1\5\0\4\0\0066\1\0\0009\1\1\0019\1\2\0015\3\3\0\18\4\0\0D\1\3\0\1\5\0\0\ttidy\a-i\a-q\6-\vsystem\afn\bvimî\2\1\0\6\0\r\0\0176\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0005\3\4\0=\3\5\0025\3\6\0005\4\a\0003\5\b\0=\5\t\4=\4\n\3=\3\v\0024\3\0\0=\3\f\2B\0\2\1K\0\1\0\29custom_dynamic_variables\vresult\15formatters\thtml\0\1\0\1\tjson\ajq\1\0\3\17show_headers\2\rshow_url\2\19show_http_info\2\14highlight\1\0\2\ftimeout\3–\1\fenabled\2\1\0\a\17yank_dry_run\2\28result_split_horizontal\1\26result_split_in_place\1\15encode_url\2\20jump_to_request\1\renv_file\t.env\26skip_ssl_verification\1\nsetup\14rest-nvim\frequire\0" },
     loaded = true,
     path = "/Users/babatunde.aromire@cognitedata.com/.local/share/nvim/site/pack/packer/start/rest.nvim",
     url = "https://github.com/rest-nvim/rest.nvim"
@@ -252,6 +283,11 @@ _G.packer_plugins = {
     path = "/Users/babatunde.aromire@cognitedata.com/.local/share/nvim/site/pack/packer/start/telescope-project.nvim",
     url = "https://github.com/nvim-telescope/telescope-project.nvim"
   },
+  ["telescope-ui-select.nvim"] = {
+    loaded = true,
+    path = "/Users/babatunde.aromire@cognitedata.com/.local/share/nvim/site/pack/packer/start/telescope-ui-select.nvim",
+    url = "https://github.com/nvim-telescope/telescope-ui-select.nvim"
+  },
   ["telescope.nvim"] = {
     loaded = true,
     path = "/Users/babatunde.aromire@cognitedata.com/.local/share/nvim/site/pack/packer/start/telescope.nvim",
@@ -261,6 +297,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/babatunde.aromire@cognitedata.com/.local/share/nvim/site/pack/packer/start/undotree",
     url = "https://github.com/mbbill/undotree"
+  },
+  ["vgit.nvim"] = {
+    loaded = true,
+    path = "/Users/babatunde.aromire@cognitedata.com/.local/share/nvim/site/pack/packer/start/vgit.nvim",
+    url = "https://github.com/tanvirtin/vgit.nvim"
   },
   ["vim-airline"] = {
     loaded = true,
@@ -272,6 +313,11 @@ _G.packer_plugins = {
     path = "/Users/babatunde.aromire@cognitedata.com/.local/share/nvim/site/pack/packer/start/vim-airline-themes",
     url = "https://github.com/vim-airline/vim-airline-themes"
   },
+  ["vim-cargo"] = {
+    loaded = true,
+    path = "/Users/babatunde.aromire@cognitedata.com/.local/share/nvim/site/pack/packer/start/vim-cargo",
+    url = "https://github.com/timonv/vim-cargo"
+  },
   ["vim-devicons"] = {
     loaded = true,
     path = "/Users/babatunde.aromire@cognitedata.com/.local/share/nvim/site/pack/packer/start/vim-devicons",
@@ -282,11 +328,6 @@ _G.packer_plugins = {
     path = "/Users/babatunde.aromire@cognitedata.com/.local/share/nvim/site/pack/packer/start/vim-fugitive",
     url = "https://github.com/tpope/vim-fugitive"
   },
-  ["vim-gitgutter"] = {
-    loaded = true,
-    path = "/Users/babatunde.aromire@cognitedata.com/.local/share/nvim/site/pack/packer/start/vim-gitgutter",
-    url = "https://github.com/airblade/vim-gitgutter"
-  },
   ["vim-test"] = {
     loaded = true,
     path = "/Users/babatunde.aromire@cognitedata.com/.local/share/nvim/site/pack/packer/start/vim-test",
@@ -296,6 +337,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/babatunde.aromire@cognitedata.com/.local/share/nvim/site/pack/packer/start/vimspector",
     url = "https://github.com/puremourning/vimspector"
+  },
+  ["yarn.nvim "] = {
+    loaded = true,
+    path = "/Users/babatunde.aromire@cognitedata.com/.local/share/nvim/site/pack/packer/start/yarn.nvim ",
+    url = "https://github.com/rainerborene/yarn.nvim "
   },
   ["zen-mode.nvim"] = {
     loaded = true,
@@ -309,9 +355,13 @@ time([[Defining packer_plugins]], false)
 time([[Config for telescope-frecency.nvim]], true)
 try_loadstring("\27LJ\2\nM\0\0\3\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0'\2\3\0B\0\2\1K\0\1\0\rfrecency\19load_extension\14telescope\frequire\0", "config", "telescope-frecency.nvim")
 time([[Config for telescope-frecency.nvim]], false)
+-- Config for: competitest.nvim
+time([[Config for competitest.nvim]], true)
+try_loadstring("\27LJ\2\n9\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\16competitest\frequire\0", "config", "competitest.nvim")
+time([[Config for competitest.nvim]], false)
 -- Config for: rest.nvim
 time([[Config for rest.nvim]], true)
-try_loadstring("\27LJ\2\n>\0\1\5\0\4\0\0066\1\0\0009\1\1\0019\1\2\0015\3\3\0\18\4\0\0D\1\3\0\1\5\0\0\ttidy\a-i\a-q\6-\vsystem\afn\bvimî\2\1\0\6\0\r\0\0176\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0005\3\4\0=\3\5\0025\3\6\0005\4\a\0003\5\b\0=\5\t\4=\4\n\3=\3\v\0024\3\0\0=\3\f\2B\0\2\1K\0\1\0\29custom_dynamic_variables\vresult\15formatters\thtml\0\1\0\1\tjson\ajq\1\0\3\17show_headers\2\rshow_url\2\19show_http_info\2\14highlight\1\0\2\ftimeout\3–\1\fenabled\2\1\0\a\renv_file\t.env\26skip_ssl_verification\1\17yank_dry_run\2\28result_split_horizontal\1\26result_split_in_place\1\15encode_url\2\20jump_to_request\1\nsetup\14rest-nvim\frequire\0", "config", "rest.nvim")
+try_loadstring("\27LJ\2\n>\0\1\5\0\4\0\0066\1\0\0009\1\1\0019\1\2\0015\3\3\0\18\4\0\0D\1\3\0\1\5\0\0\ttidy\a-i\a-q\6-\vsystem\afn\bvimî\2\1\0\6\0\r\0\0176\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0005\3\4\0=\3\5\0025\3\6\0005\4\a\0003\5\b\0=\5\t\4=\4\n\3=\3\v\0024\3\0\0=\3\f\2B\0\2\1K\0\1\0\29custom_dynamic_variables\vresult\15formatters\thtml\0\1\0\1\tjson\ajq\1\0\3\17show_headers\2\rshow_url\2\19show_http_info\2\14highlight\1\0\2\ftimeout\3–\1\fenabled\2\1\0\a\17yank_dry_run\2\28result_split_horizontal\1\26result_split_in_place\1\15encode_url\2\20jump_to_request\1\renv_file\t.env\26skip_ssl_verification\1\nsetup\14rest-nvim\frequire\0", "config", "rest.nvim")
 time([[Config for rest.nvim]], false)
 -- Load plugins in order defined by `after`
 time([[Sequenced loading]], true)

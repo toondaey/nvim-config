@@ -132,5 +132,22 @@ return require('packer').startup(function(use)
     use({ 'toppair/peek.nvim', run = 'deno task --quiet build:fast' })
     use('simrat39/inlay-hints.nvim')
     use("folke/zen-mode.nvim")
-    use("airblade/vim-gitgutter")
+    -- use("airblade/vim-gitgutter")
+    use {
+        'tanvirtin/vgit.nvim',
+        requires = {
+            'nvim-lua/plenary.nvim'
+        }
+    }
+    use { 'stevearc/dressing.nvim' }
+    use { 'nvim-telescope/telescope-ui-select.nvim' }
+    use 'timonv/vim-cargo'
+    use {
+        'xeluxee/competitest.nvim',
+        requires = 'MunifTanjim/nui.nvim',
+        config = function() require 'competitest'.setup() end
+    }
+    use { 'kevinhwang91/nvim-ufo', requires = 'kevinhwang91/promise-async' }
+    use 'skanehira/denops-docker.vim'
+    use {'rainerborene/yarn.nvim '}
 end)

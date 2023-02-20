@@ -1,8 +1,11 @@
 local telescope = require("telescope")
 telescope.setup({
+    defaults = {
+        file_ignore_patterns = { '.git', 'node_modules', 'target', 'obj', 'bin', '.venv' }
+    },
     pickers = {
         find_files = {
-            theme = "ivy",
+            -- theme = "ivy",
             mappings = {
                 n = {
                     ["cd"] = function(prompt_bufnr)
@@ -32,8 +35,12 @@ telescope.setup({
             }
         },
         frecency = {
-            theme = 'ivy',
+            -- theme = 'ivy',
             ignore_patterns = { '*.git/*', '**/node_modules/*', '**/target/*', '**/obj/*', '**/bin/*', '**/.venv/*' }
+        },
+        ["ui-select"] = {
+            -- require("telescope.themes").get_ivy(),
+            require("telescope.themes").get_dropdown()
         }
     }
 })
@@ -41,6 +48,7 @@ telescope.setup({
 telescope.load_extension('fzf')
 telescope.load_extension("file_browser")
 telescope.load_extension('project')
+telescope.load_extension('ui-select')
 
 
 -- telescope.extensions.file_browser = finder

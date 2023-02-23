@@ -54,7 +54,7 @@ telescope.load_extension('ui-select')
 -- telescope.extensions.file_browser = finder
 
 local builtin = require('telescope.builtin')
-vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
+vim.keymap.set('n', '<leader>ff', function() builtin.find_files({ hidden = true }) end, {})
 vim.keymap.set('n', '<leader>gb', builtin.git_branches, {})
 vim.keymap.set('n', '<leader>gc', builtin.git_commits, {})
 vim.keymap.set('n', '<leader>gf', builtin.git_files, {})
@@ -65,7 +65,7 @@ vim.keymap.set('n', '<leader>fc', builtin.commands, {})
 vim.keymap.set(
     "n",
     "<leader>fd",
-    telescope.extensions.file_browser.file_browser,
+    function() telescope.extensions.file_browser.file_browser({ hidden = true }) end,
     { noremap = true }
 )
 vim.keymap.set(

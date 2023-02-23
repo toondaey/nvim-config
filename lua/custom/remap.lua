@@ -39,7 +39,10 @@ vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
 
 -- Save file
 vim.keymap.set("n", "<C-s>", [[:w<CR>]], {silent = true})
-vim.keymap.set("i", "<C-s>", [[<Esc>:w<CR>==gi]], {silent = true})
+vim.keymap.set("i", "<C-s>", [[<Esc>:w<CR>==gi]], {silent = true, noremap = true})
+-- Save all files
+vim.keymap.set("n", "<C-S>", [[:wa<CR>]], {silent = true})
+vim.keymap.set("i", "<C-S>", [[<Esc>:wa<CR>==gi]], {silent = true, noremap = true})
 --vim.keymap.set("i", "<C-s>", [[:w<CR>gv=gv]])
 
 -- close current buffer without deleting

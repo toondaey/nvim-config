@@ -130,7 +130,8 @@ return require('packer').startup(function(use)
     }
     use 'vim-test/vim-test'
     use({ 'toppair/peek.nvim', run = 'deno task --quiet build:fast' })
-    use('simrat39/inlay-hints.nvim')
+    -- use('simrat39/inlay-hints.nvim')
+    use { 'lvimuser/lsp-inlayhints.nvim' }
     use("folke/zen-mode.nvim")
     -- use("airblade/vim-gitgutter")
     use {
@@ -147,7 +148,35 @@ return require('packer').startup(function(use)
         requires = 'MunifTanjim/nui.nvim',
         config = function() require 'competitest'.setup() end
     }
-    use { 'kevinhwang91/nvim-ufo', requires = 'kevinhwang91/promise-async' }
-    use 'skanehira/denops-docker.vim'
-    use {'rainerborene/yarn.nvim '}
+    use {
+        "kevinhwang91/nvim-ufo",
+        requires = {
+            "kevinhwang91/promise-async",
+            {
+                "luukvbaal/statuscol.nvim",
+                require = { 'lewis6991/gitsigns.nvim' },
+                config = function()
+                    require("statuscol").setup(
+                        {
+                            foldfunc = "builtin",
+                            setopt = true
+                        }
+                    )
+                end
+            }
+        }
+    }
+    use { 'akinsho/git-conflict.nvim', tag = "*", config = function()
+        require('git-conflict').setup()
+    end }
+    use { 'tpope/vim-rhubarb' }
+    use { "m4xshen/smartcolumn.nvim" }
+    use { 'mfussenegger/nvim-dap' }
+    use { 'simrat39/rust-tools.nvim' }
+    use {
+        'neoclide/npm.nvim',
+        requires  = {
+            'Shougo/denite.nvim'
+        }
+    }
 end)

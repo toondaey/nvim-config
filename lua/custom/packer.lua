@@ -148,22 +148,12 @@ return require('packer').startup(function(use)
         requires = 'MunifTanjim/nui.nvim',
         config = function() require 'competitest'.setup() end
     }
+    use { 'lewis6991/gitsigns.nvim' }
     use {
         "kevinhwang91/nvim-ufo",
         requires = {
             "kevinhwang91/promise-async",
-            {
-                "luukvbaal/statuscol.nvim",
-                require = { 'lewis6991/gitsigns.nvim' },
-                config = function()
-                    require("statuscol").setup(
-                        {
-                            foldfunc = "builtin",
-                            setopt = true
-                        }
-                    )
-                end
-            }
+            { "luukvbaal/statuscol.nvim", }
         }
     }
     use { 'akinsho/git-conflict.nvim', tag = "*", config = function()

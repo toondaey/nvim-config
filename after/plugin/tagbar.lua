@@ -1,1 +1,1 @@
-vim.keymap.set("n", "<F8>", vim.cmd.TagbarToggle)
+vim.keymap.set("n", "<leader>tb", vim.cmd.TagbarToggle)

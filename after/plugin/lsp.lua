@@ -46,10 +46,6 @@ lsp.set_preferences({
     }
 })
 
-lsp.on_attach(function(client, bufnr)
-    ih.on_attach(client, bufnr)
-end)
-
 lsp.configure('lua_ls', {
     on_attach = function(c, b)
         ih.on_attach(c, b)
@@ -81,7 +77,7 @@ lsp.configure('tsserver', {
 rt.setup({
     tools = {
         inlay_hints = {
-            auto = false
+            auto = true
         }
     }
 })
@@ -92,7 +88,17 @@ lsp.configure('pyright', {
     end
 })
 
-lsp.skip_server_setup({ 'python-lsp-server' })
+lsp.configure('pylsp', {
+    on_attach = function(c, b) ih.on_attach(c, b) end,
+    settings = {
+        pylsp = {
+            plugins = {
+                pyls_black = { enabled = true },
+                isort = { enabled = true }
+            }
+        }
+    }
+})
 
 lsp.setup()
 

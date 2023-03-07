@@ -8,7 +8,7 @@ telescope.setup({
             -- theme = "ivy",
             mappings = {
                 n = {
-                    ["cd"] = function(prompt_bufnr)
+                        ["cd"] = function(prompt_bufnr)
                         local selection = require("telescope.actions.state").get_selected_entry()
                         local dir = vim.fn.fnamemodify(selection.path, ":p:h")
                         require("telescope.actions").close(prompt_bufnr)
@@ -38,7 +38,7 @@ telescope.setup({
             -- theme = 'ivy',
             ignore_patterns = { '*.git/*', '**/node_modules/*', '**/target/*', '**/obj/*', '**/bin/*', '**/.venv/*' }
         },
-        ["ui-select"] = {
+            ["ui-select"] = {
             -- require("telescope.themes").get_ivy(),
             require("telescope.themes").get_dropdown()
         }
@@ -62,6 +62,7 @@ vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
 vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
 vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
 vim.keymap.set('n', '<leader>fc', builtin.commands, {})
+vim.keymap.set('n', '<leader>tb', builtin.treesitter, {})
 vim.keymap.set(
     "n",
     "<leader>fd",

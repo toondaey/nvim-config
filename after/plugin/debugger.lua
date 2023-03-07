@@ -35,3 +35,7 @@ vim.keymap.set("i", "<F23>", [[<Esc>:call vimspector#StepOut()<CR>==gi]], {silen
 
 vim.keymap.set("n", "<•>", [[:call vimspector#Disassemble()<CR>]], {silent = false})
 vim.keymap.set("i", "<•>", [[<Esc>:call vimspector#Disassemble()<CR>==gi]], {silent = false})
+
+
+vim.keymap.set("n", "<leader>di", vim.cmd.VimspectorBalloonEval, {silent = false})
+vim.keymap.set("x", "<leader>di", vim.cmd.VimspectorBalloonEval, {silent = false})

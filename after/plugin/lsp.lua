@@ -93,12 +93,18 @@ lsp.configure('pylsp', {
     settings = {
         pylsp = {
             plugins = {
-                pyls_black = { enabled = true },
-                isort = { enabled = true }
+                black = { enabled = true },
+                isort = { enabled = true },
+                mypy = { enabled = true },
+                pycodestyle = { enabled = false },
+                mccabe = { enabled = false },
+                ruff = { enabled = true }
             }
         }
     }
 })
+
+-- lsp.skip_server_setup({ 'pyright' })
 
 lsp.setup()
 

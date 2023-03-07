@@ -36,4 +36,6 @@ vim.cmd([[
   syntax enable
 ]])
 local smartcolumn = require("smartcolumn")
-smartcolumn.setup()
+smartcolumn.setup({
+    colorcolumn = 120
+})

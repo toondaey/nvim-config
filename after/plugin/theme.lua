@@ -13,12 +13,16 @@ require('catppuccin').setup({
 })
 
 require("barbecue").setup {
-  theme = "catppuccin",
+    theme = "github_dark_default",
 }
+
+require('github-theme').setup({
+    -- ...
+})
 
 -- You NEED to enable highlight in nvim-navic setting or it won't work
 require("nvim-navic").setup {
     highlight = true
 }
 
-vim.g.airline_theme = 'catppuccin'
+vim.cmd.colorscheme "github_dark_default"

@@ -1,7 +1,7 @@
 local telescope = require("telescope")
 telescope.setup({
     defaults = {
-        file_ignore_patterns = { '.git', 'node_modules', 'target', 'obj', 'bin', '.venv' }
+        file_ignore_patterns = { 'node_modules', 'target', 'obj', 'bin', '.venv', '!.vim/*' }
     },
     pickers = {
         find_files = {
@@ -24,6 +24,7 @@ telescope.setup({
             theme = "ivy",
             hijack_netrw = true,
             cwd_to_path = true,
+            respect_gitignore = false
         },
         fzf = {
             case_mode = "ignore_case"
@@ -38,9 +39,13 @@ telescope.setup({
             -- theme = 'ivy',
             ignore_patterns = { '*.git/*', '**/node_modules/*', '**/target/*', '**/obj/*', '**/bin/*', '**/.venv/*' }
         },
-            ["ui-select"] = {
+        ["ui-select"] = {
             -- require("telescope.themes").get_ivy(),
             require("telescope.themes").get_dropdown()
+        },
+        workspaces = {
+            -- keep insert mode after selection in the picker, default is false
+            keep_insert = true,
         }
     }
 })
@@ -49,12 +54,12 @@ telescope.load_extension('fzf')
 telescope.load_extension("file_browser")
 telescope.load_extension('project')
 telescope.load_extension('ui-select')
-
+telescope.load_extension("workspaces")
 
 -- telescope.extensions.file_browser = finder
 
 local builtin = require('telescope.builtin')
-vim.keymap.set('n', '<leader>ff', function() builtin.find_files({ hidden = true }) end, {})
+vim.keymap.set('n', '<leader>ff', function() builtin.find_files({ hidden = true, no_ignore = true }) end, {})
 vim.keymap.set('n', '<leader>gb', builtin.git_branches, {})
 vim.keymap.set('n', '<leader>gc', builtin.git_commits, {})
 vim.keymap.set('n', '<leader>gf', builtin.git_files, {})
@@ -66,7 +71,7 @@ vim.keymap.set('n', '<leader>tb', builtin.treesitter, {})
 vim.keymap.set(
     "n",
     "<leader>fd",
-    function() telescope.extensions.file_browser.file_browser({ hidden = true }) end,
+    telescope.extensions.file_browser.file_browser,
     { noremap = true }
 )
 vim.keymap.set(

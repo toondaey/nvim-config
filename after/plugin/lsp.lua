@@ -1,7 +1,6 @@
 -- Learn the keybindings, see :help lsp-zero-keybindings
 -- Learn to configure LSP servers, see :help lsp-zero-api-showcase
 local lsp = require('lsp-zero')
--- local ih = require("inlay-hints")
 local ih = require('lsp-inlayhints')
 local rt = require("rust-tools")
 lsp.preset('recommended')
@@ -55,6 +54,17 @@ lsp.configure('lua_ls', {
     }
 })
 
+lsp.configure('yamlls', {
+    settings = {
+        yaml = {
+            keyOrdering = false,
+            schemas={
+                ["https://raw.githubusercontent.com/SchemaStore/schemastore/master/src/schemas/json/github-workflow.json"] = "./.github/workflow/*.y?aml"
+            }
+        }
+    }
+})
+
 lsp.configure('tsserver', {
     on_attach = function(c, b)
         ih.on_attach(c, b)
@@ -82,29 +92,17 @@ rt.setup({
     }
 })
 
-lsp.configure('pyright', {
-    on_attach = function(c, b)
-        ih.on_attach(c, b)
-    end
-})
 
-lsp.configure('pylsp', {
-    on_attach = function(c, b) ih.on_attach(c, b) end,
+lsp.configure('pyright', {
     settings = {
-        pylsp = {
-            plugins = {
-                black = { enabled = true },
-                isort = { enabled = true },
-                mypy = { enabled = true },
-                pycodestyle = { enabled = false },
-                mccabe = { enabled = false },
-                ruff = { enabled = true }
+        python = {
+            analysis = {
+                venvPath = ".venv"
             }
         }
     }
 })
 
--- lsp.skip_server_setup({ 'pyright' })
 
 lsp.setup()
 
@@ -114,3 +112,4 @@ vim.diagnostic.config({
 
 -- Restart LSP server
 vim.keymap.set("n", "<leader>lrs", vim.cmd.LspRestart, { silent = false })
+

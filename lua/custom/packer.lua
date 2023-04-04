@@ -19,6 +19,9 @@ return require('packer').startup(function(use)
     use { 'ThePrimeagen/harpoon' }
     use { 'mbbill/undotree' }
     use { 'tpope/vim-fugitive' }
+    use { 'tpope/vim-dadbod' }
+    use { 'kristijanhusak/vim-dadbod-ui' }
+    use { 'kristijanhusak/vim-dadbod-completion' }
     -- use { 'preservim/nerdtree' }
     use {
         'VonHeikemen/lsp-zero.nvim',
@@ -130,10 +133,8 @@ return require('packer').startup(function(use)
     }
     use 'vim-test/vim-test'
     use({ 'toppair/peek.nvim', run = 'deno task --quiet build:fast' })
-    -- use('simrat39/inlay-hints.nvim')
     use { 'lvimuser/lsp-inlayhints.nvim' }
     use("folke/zen-mode.nvim")
-    -- use("airblade/vim-gitgutter")
     use {
         'tanvirtin/vgit.nvim',
         requires = {
@@ -156,9 +157,10 @@ return require('packer').startup(function(use)
             { "luukvbaal/statuscol.nvim", }
         }
     }
-    use { 'akinsho/git-conflict.nvim', tag = "*", config = function()
-        require('git-conflict').setup()
-    end }
+    use({
+        'akinsho/git-conflict.nvim',
+        tag = "*"
+    })
     use { 'tpope/vim-rhubarb' }
     use { "m4xshen/smartcolumn.nvim" }
     use { 'mfussenegger/nvim-dap' }
@@ -179,4 +181,25 @@ return require('packer').startup(function(use)
         'ruifm/gitlinker.nvim',
         requires = 'nvim-lua/plenary.nvim',
     }
+
+    -- Or with configuration
+    use({
+        'projekt0n/github-nvim-theme',
+        branch = '0.0.x',
+        config = function()
+            require('github-theme').setup({
+                -- ...
+            })
+        end
+    })
+    use({ 'mg979/vim-visual-multi', branch = 'master' })
+    use({
+        'natecraddock/workspaces.nvim',
+        config = function()
+            local workspaces = require('workspaces')
+            workspaces.setup()
+        end
+    })
+    use('Hoffs/omnisharp-extended-lsp.nvim')
+    use('folke/trouble.nvim')
 end)

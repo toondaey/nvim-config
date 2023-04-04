@@ -15,7 +15,7 @@ vim.keymap.set("n", "<C-u>", "<C-u>zz")
 -- Allow copying of and pasting without loosing copied item
 vim.keymap.set("x", "<leader>p", "\"_dP")
 
--- Allow copying from vim clipboard to system clipboardd
+-- Allow copying from vim clipboard to system clipboard
 vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]])
 vim.keymap.set("n", "<leader>Y", [["+Y]])
 
@@ -40,13 +40,19 @@ vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
 -- Save file
 vim.keymap.set("n", "<C-s>", [[:w<CR>]], {silent = true})
 vim.keymap.set("i", "<C-s>", [[<Esc>:w<CR>==gi]], {silent = true, noremap = true})
+vim.keymap.set("v", "<C-s>", [[<Esc>:w<CR>gv=gv]], {silent = true, noremap = true})
 -- Save all files
-vim.keymap.set("n", "<C-S>", [[:wa<CR>]], {silent = true})
-vim.keymap.set("i", "<C-S>", [[<Esc>:wa<CR>==gi]], {silent = true, noremap = true})
---vim.keymap.set("i", "<C-s>", [[:w<CR>gv=gv]])
+vim.keymap.set("n", "<C-A-s>", [[:wa<CR>]], {silent = true})
+vim.keymap.set("i", "<C-A-s>", [[<Esc>:wa<CR>==gi]], {silent = true, noremap = true})
+vim.keymap.set("v", "<C-A-s>", [[<Esc>:wa<CR>gv=gv]])
 
 -- close current buffer without deleting
 vim.keymap.set("n", "<C-x>", ":bw<CR>", {silent = true})
 
 -- Bring next line to current line without cursor jumping all the way to the back
 vim.keymap.set("n", "J", "mzJ`z", {silent = true})
+
+vim.keymap.set("n", "<leader>.", [[<C-W>>]])
+vim.keymap.set("n", "<leader>,", [[<C-W><]])
+vim.keymap.set("n", "<leader>-", [[<C-W>-]])
+vim.keymap.set("n", "<leader>=", [[<C-W>+]])

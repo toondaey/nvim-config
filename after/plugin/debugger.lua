@@ -6,8 +6,8 @@ vim.keymap.set("i", "<F5>", [[<Esc>:call vimspector#Continue()<CR>==gi]], {silen
 vim.keymap.set("n", "<F17>", [[:call vimspector#Reset()<CR>]], {silent = false})
 vim.keymap.set("i", "<F17>", [[<Esc>:call vimspector#Reset()<CR>==gi]], {silent = false})
 
-vim.keymap.set("n", "<leader><F17>", [[:call vimspector#Restart()<CR>]], {silent = false})
-vim.keymap.set("i", "<leader><F17>", [[<Esc>:call vimspector#Restart()<CR>==gi]], {silent = false})
+vim.keymap.set("n", "<leader><F29>", [[:call vimspector#Restart()<CR>]], {silent = false})
+vim.keymap.set("i", "<leader><F29>", [[<Esc>:call vimspector#Restart()<CR>==gi]], {silent = false})
 
 vim.keymap.set("n", "<F6>", [[:call vimspector#Pause()<CR>]], {silent = false})
 vim.keymap.set("i", "<F6>", [[<Esc>:call vimspector#Pause()<CR>==gi]], {silent = false})

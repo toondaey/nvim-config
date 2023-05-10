@@ -62,7 +62,6 @@ return require('packer').startup(function(use)
         end,
     })
     use { 'preservim/tagbar' }
-    use { 'puremourning/vimspector' }
     use {
         'glepnir/dashboard-nvim',
         event = 'VimEnter',
@@ -163,7 +162,7 @@ return require('packer').startup(function(use)
     })
     use { 'tpope/vim-rhubarb' }
     use { "m4xshen/smartcolumn.nvim" }
-    use { 'mfussenegger/nvim-dap' }
+    -- use { 'mfussenegger/nvim-dap' }
     use { 'simrat39/rust-tools.nvim' }
     use {
         'neoclide/npm.nvim',
@@ -202,4 +201,19 @@ return require('packer').startup(function(use)
     })
     use('Hoffs/omnisharp-extended-lsp.nvim')
     use('folke/trouble.nvim')
+    use { 'puremourning/vimspector' }
+    use {
+        "ThePrimeagen/refactoring.nvim",
+        requires = {
+            { "nvim-lua/plenary.nvim" },
+            { "nvim-treesitter/nvim-treesitter" }
+        }
+    }
+    use {
+        'samodostal/image.nvim',
+        requires = {
+            'nvim-lua/plenary.nvim',
+            { 'm00qek/baleia.nvim', tag = 'v1.3.0' }
+        },
+    }
 end)

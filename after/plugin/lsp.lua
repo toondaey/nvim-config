@@ -58,7 +58,7 @@ lsp.configure('yamlls', {
     settings = {
         yaml = {
             keyOrdering = false,
-            schemas={
+            schemas = {
                 ["https://raw.githubusercontent.com/SchemaStore/schemastore/master/src/schemas/json/github-workflow.json"] = "./.github/workflow/*.y?aml"
             }
         }
@@ -94,15 +94,60 @@ rt.setup({
 
 
 lsp.configure('pyright', {
+    on_attach = function(client, bufnr)
+        local util = require("lspconfig/util")
+        local path = util.path
+
+        -- From: https://github.com/IceS2/dotfiles/blob/master/nvim/lua/plugins_cfg/mason_ls_and_dap.lua
+        local function get_python_path(workspace)
+            -- Use activated virtualenv.
+            if vim.env.VIRTUAL_ENV or vim.fn.glob(path.join(workspace, '.venv')) then
+                local venv_path = vim.env.VIRTUAL_ENV or vim.fn.glob(path.join(workspace, '.venv'))
+                return path.join(venv_path, "bin", "python")
+            end
+
+            -- Find and use virtualenv in workspace directory.
+            for _, pattern in ipairs({ "*", ".*" }) do
+                local match = vim.fn.glob(path.join(workspace, pattern, ".python-local"))
+                if match ~= "" then
+                    return path.join(vim.env.PYENV_ROOT, "versions", path.dirname(match), "bin", "python")
+                end
+            end
+
+            -- Fallback to system Python.
+            return exepath("python3") or exepath("python") or "python"
+        end
+
+        local function get_venv(workspace)
+            for _, pattern in ipairs({ "*", ".*" }) do
+                local match = vim.fn.glob(path.join(workspace, pattern, ".python-local"))
+                if match ~= "" then
+                    return match
+                end
+            end
+        end
+
+        client.config.settings.python.pythonPath = get_python_path(client.config.root_dir)
+        -- client.config.settings.venvPath = path.join(vim.env.PYENV_ROOT, "versions")
+        -- print(client.config.settings.venvPath)
+        -- client.config.settings.venv = get_venv(client.config.root_dir)
+    end,
     settings = {
         python = {
+            venvPath = ".venv",
+            venv = ".",
+            disableLanguageServices = true,
+            disableOrganizeImports = true,
             analysis = {
-                venvPath = ".venv"
+                diagnosticMode = 'off',
+                typeCheckingMode = 'off',
+                logLevel = 'Information'
             }
         }
     }
 })
 
+vim.lsp.set_log_level("error")
 
 lsp.setup()
 
@@ -112,4 +157,3 @@ vim.diagnostic.config({
 
 -- Restart LSP server
 vim.keymap.set("n", "<leader>lrs", vim.cmd.LspRestart, { silent = false })
-

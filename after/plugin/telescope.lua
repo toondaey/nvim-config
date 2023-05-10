@@ -1,7 +1,7 @@
 local telescope = require("telescope")
 telescope.setup({
     defaults = {
-        file_ignore_patterns = { 'node_modules', 'target', 'obj', 'bin', '.venv', '!.vim/*' }
+        -- file_ignore_patterns = { 'node_modules', 'target', 'obj', 'bin', '.venv', '!.vim/*' }
     },
     pickers = {
         find_files = {
@@ -37,11 +37,11 @@ telescope.setup({
         },
         frecency = {
             -- theme = 'ivy',
-            ignore_patterns = { '*.git/*', '**/node_modules/*', '**/target/*', '**/obj/*', '**/bin/*', '**/.venv/*' }
+            ignore_patterns = { '*.git', 'node_modules', 'target', 'obj', 'bin', '.venv' }
         },
         ["ui-select"] = {
             -- require("telescope.themes").get_ivy(),
-            require("telescope.themes").get_dropdown()
+            require("telescope.themes").get_dropdown{}
         },
         workspaces = {
             -- keep insert mode after selection in the picker, default is false

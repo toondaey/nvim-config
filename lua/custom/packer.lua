@@ -45,6 +45,7 @@ return require('packer').startup(function(use)
             { 'rafamadriz/friendly-snippets' }, -- Optional
         }
     }
+    use { 'L3MON4D3/LuaSnip' }
     use('preservim/nerdcommenter')
     use { 'ryanoasis/vim-devicons' }
     use { 'vim-airline/vim-airline' }
@@ -216,4 +217,20 @@ return require('packer').startup(function(use)
             { 'm00qek/baleia.nvim', tag = 'v1.3.0' }
         },
     }
+    use 'nanotee/sqls.nvim'
+    use {
+        'jose-elias-alvarez/null-ls.nvim',
+        requires = 'nvim-lua/plenary.nvim'
+    }
+    use { 'jay-babu/mason-null-ls.nvim' }
+    use {
+        'pwntester/octo.nvim',
+        requires = {
+            'nvim-lua/plenary.nvim',
+            'nvim-telescope/telescope.nvim',
+            'nvim-tree/nvim-web-devicons',
+        },
+    }
+    use "qnighy/lalrpop.vim"
+    use 'Decodetalkers/csharpls-extended-lsp.nvim'
 end)
